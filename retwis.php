@@ -1,4 +1,4 @@
-<?
+<?php
 require 'Predis/Autoloader.php';
 Predis\Autoloader::register();
 
@@ -138,7 +138,7 @@ function showLastUsers() {
     $users = $r->zrevrange("users_by_time",0,9);
     echo("<div>");
     foreach($users as $u) {
-        echo("<a class=\"username\" href=\"profile.php?u=".urlencode($u)."\">".utf8entities($u)."</a> ");
+        echo "<a class=\"username\" href=\"profile.php?u=".urlencode($u)."\">".utf8entities($u)."</a> ";
     }
     echo("</div><br>");
 }
